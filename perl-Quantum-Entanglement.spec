@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Quantum
@@ -10,12 +10,13 @@ Summary(pl):	Quantum::Entanglement - zawik³anie zmiennych mechaniki kwantowej w 
 Name:		perl-Quantum-Entanglement
 Version:	0.32
 Release:	2
-License:	GPL/Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	40c2bde2fbb794197010007f7ceb059d
 BuildRequires:	perl-devel >= 5.6
-%if %{?_without_tests:0}%{!?_without_tests:1}
+%if %{with tests}
 BuildRequires:	perl(Math::Complex)
 %endif
 BuildRequires:	rpm-perlprov >= 3.0.3-26
@@ -40,15 +41,17 @@ ca³y system, który jest spójny wedle naszej wiedzy.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -56,5 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Change*
-%{perl_sitelib}/%{pdir}/*.pm
+%{perl_vendorlib}/%{pdir}/*.pm
 %{_mandir}/man3/*
