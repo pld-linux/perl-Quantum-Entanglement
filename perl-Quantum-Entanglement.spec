@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Quantum
-%define	pnam	Entanglement
+%define		pdir	Quantum
+%define		pnam	Entanglement
 Summary:	Quantum::Entanglement - QM entanglement of variables in Perl
 Summary(pl):	Quantum::Entanglement - zawik³anie zmiennych mechaniki kwantowej w Perlu
 Name:		perl-Quantum-Entanglement
