@@ -39,7 +39,7 @@ ca³y system, który jest spójny wedle naszej wiedzy.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 
 %{!?_without_tests:%{__make} test}
