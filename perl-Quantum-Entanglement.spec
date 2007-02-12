@@ -6,7 +6,7 @@
 %define		pdir	Quantum
 %define		pnam	Entanglement
 Summary:	Quantum::Entanglement - QM entanglement of variables in Perl
-Summary(pl):	Quantum::Entanglement - zawik≥anie zmiennych mechaniki kwantowej w Perlu
+Summary(pl.UTF-8):   Quantum::Entanglement - zawik≈Çanie zmiennych mechaniki kwantowej w Perlu
 Name:		perl-Quantum-Entanglement
 Version:	0.32
 Release:	2
@@ -30,12 +30,12 @@ interact) and then observe them (testing to see if they satisfy some
 comparison operator, printing them) which will collapse the entire
 system so that it is consistent with your knowledge.
 
-%description -l pl
-Zasadniczo ten modu≥ pozwala na umieszczanie zmiennych w superpozycji
-stanÛw, pozwalanie im na oddzia≥ywanie na siebie (tak, øe wszystkie
-stany oddzia≥ywuj± ze sob±) i obserwowanie ich (sprawdzanie, czy s±
-zgodne z pewnym operatorem porÛwnania, wypisywanie ich), ktÛra za≥amie
-ca≥y system, ktÛry jest spÛjny wedle naszej wiedzy.
+%description -l pl.UTF-8
+Zasadniczo ten modu≈Ç pozwala na umieszczanie zmiennych w superpozycji
+stan√≥w, pozwalanie im na oddzia≈Çywanie na siebie (tak, ≈ºe wszystkie
+stany oddzia≈ÇywujƒÖ ze sobƒÖ) i obserwowanie ich (sprawdzanie, czy sƒÖ
+zgodne z pewnym operatorem por√≥wnania, wypisywanie ich), kt√≥ra za≈Çamie
+ca≈Çy system, kt√≥ry jest sp√≥jny wedle naszej wiedzy.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
