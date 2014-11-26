@@ -1,10 +1,10 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	Quantum
 %define		pnam	Entanglement
+%include	/usr/lib/rpm/macros.perl
 Summary:	Quantum::Entanglement - QM entanglement of variables in Perl
 Summary(pl.UTF-8):	Quantum::Entanglement - zawikłanie zmiennych mechaniki kwantowej w Perlu
 Name:		perl-Quantum-Entanglement
@@ -15,11 +15,12 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	40c2bde2fbb794197010007f7ceb059d
+URL:		http://search.cpan.org/dist/Quantum-Entanglement/
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 3.0.3-26
 %if %{with tests}
 BuildRequires:	perl(Math::Complex)
 %endif
-BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
