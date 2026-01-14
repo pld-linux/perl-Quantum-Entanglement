@@ -8,7 +8,7 @@ Summary:	Quantum::Entanglement - QM entanglement of variables in Perl
 Summary(pl.UTF-8):	Quantum::Entanglement - zawikłanie zmiennych mechaniki kwantowej w Perlu
 Name:		perl-Quantum-Entanglement
 Version:	0.32
-Release:	3
+Release:	4
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
